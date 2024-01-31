@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigations"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.presentationproject.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/wishlist"
+        android:name="com.example.presentationproject.Wishlist"
+        android:label="fragment_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.example.presentationproject.Categories"
+        android:label="fragment_catagories"
+        tools:layout="@layout/fragment_catagories" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.presentationproject.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/tableBooking"
+        android:name="com.example.presentationproject.TableBooking"
+        android:label="fragment_table_booking"
+        tools:layout="@layout/fragment_table_booking" />
+    <fragment
+        android:id="@+id/setting"
+        android:name="com.example.presentationproject.Setting"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.presentationproject.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/share"
+        android:name="com.example.presentationproject.Share"
+        android:label="fragment_share"
+        tools:layout="@layout/fragment_share" />
+</navigation>
