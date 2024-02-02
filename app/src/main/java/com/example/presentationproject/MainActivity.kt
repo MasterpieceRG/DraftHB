@@ -1,16 +1,26 @@
 package com.example.presentationproject
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageButton
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.presentationproject.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var actionBarDrawerTaggle: ActionBarDrawerToggle
+    private lateinit var toolbar: Toolbar
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -22,27 +32,24 @@ class MainActivity : AppCompatActivity() {
         var navController = findNavController(R.id.fragmentContainerView)
         binding.bottomNavView.setupWithNavController(navController)
 
+        toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
 
 
-        actionBarDrawerTaggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            R.string.nav_open,
-            R.string.nav_close
-        );
+        actionBarDrawerTaggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.nav_open, R.string.nav_close)
         actionBarDrawerTaggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+
         binding.draweNav.setNavigationItemSelectedListener { menuItem ->
-
-
             when (menuItem.itemId) {
                 R.id.profile -> {
                     binding.drawerLayout.closeDrawers()
-                    binding.draweNav.setupWithNavController(navController)
+//                    binding.draweNav.setupWithNavController(navController)
+                    startActivity(Intent(this@MainActivity, ActivityProfile::class.java))
                 }
-
                 R.id.tableBooking -> {
                     binding.drawerLayout.closeDrawers()
                     binding.draweNav.setupWithNavController(navController)
@@ -83,9 +90,7 @@ class MainActivity : AppCompatActivity() {
                     binding.drawerLayout.closeDrawers()
                     binding.draweNav.setupWithNavController(navController)
                 }
-
             }
-
             true
         }
     }
@@ -95,5 +100,6 @@ class MainActivity : AppCompatActivity() {
             true
         } else super.onOptionsItemSelected(item)
     }
+
 }
 

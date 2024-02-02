@@ -16,21 +16,21 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/bottomNavView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarCard"
             app:navGraph="@navigation/navigations" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavView"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#F3E5F5"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
             android:tooltipText="MRG"
+            app:itemIconPadding="20dp"
+            app:itemIconTint="@color/accent"
             app:itemRippleColor="@color/accent"
-            app:itemIconPadding="10dp"
             app:itemTextColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,14 +38,15 @@
             app:menu="@menu/bottom_nev_menu" />
 
         <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            android:layout_width="55dp"
             android:layout_height="65dp"
-            android:background="@color/accent"
-            app:title="HOME"
-            app:titleTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -56,8 +57,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_nav_header"
         app:menu="@menu/drawer_menu" />
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
 

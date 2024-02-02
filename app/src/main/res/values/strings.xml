@@ -16,4 +16,6 @@
     <string name="menu_wishlist">Wishlist</string>
     <string name="address">Soronika, Savar, Dhaka, Bangladesh</string>
     <string name="bio">A professional bio or biography is a short overview of your experience. Professional bios usually include details about education, employment, achievements, and relevant skills."</string>
+    <string name="open_edit_dialog">Open edit dialog</string>
+    <string name="go_to_home_page">Go to home page</string>
 </resources>

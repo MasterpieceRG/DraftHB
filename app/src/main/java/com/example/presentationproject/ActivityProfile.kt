@@ -2,33 +2,28 @@ package com.example.presentationproject
 
 import android.app.AlertDialog
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.EditText
 import androidx.navigation.fragment.findNavController
-import com.example.presentationproject.databinding.FragmentProfileBinding
-import java.nio.file.attribute.AclEntry.Builder
+import com.example.presentationproject.databinding.ActivityProfileBinding
 
-class Profile : Fragment() {
-    private lateinit var binding: FragmentProfileBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
+class ActivityProfile : AppCompatActivity() {
+    private lateinit var binding: ActivityProfileBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityProfileBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
 
         binding.backBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_profile_to_home)
+            startActivity(Intent(this@ActivityProfile, MainActivity::class.java))
         }
 
         binding.nameCard.setOnClickListener {
             //findNavController().navigate(R.id.action_profile_to_editProfile)
 
-            val builder = AlertDialog.Builder(context)
+            val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.editTextEt)
@@ -49,7 +44,7 @@ class Profile : Fragment() {
         binding.phoneCard.setOnClickListener {
             //findNavController().navigate(R.id.action_profile_to_editProfile)
 
-            val builder = AlertDialog.Builder(context)
+            val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.editTextEt)
@@ -70,7 +65,7 @@ class Profile : Fragment() {
         binding.addressCard.setOnClickListener {
             //findNavController().navigate(R.id.action_profile_to_editProfile)
 
-            val builder = AlertDialog.Builder(context)
+            val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.editTextEt)
@@ -91,7 +86,7 @@ class Profile : Fragment() {
         binding.DOBCard.setOnClickListener {
             //findNavController().navigate(R.id.action_profile_to_editProfile)
 
-            val builder = AlertDialog.Builder(context)
+            val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.editTextEt)
@@ -112,7 +107,7 @@ class Profile : Fragment() {
         binding.bioCard.setOnClickListener {
             //findNavController().navigate(R.id.action_profile_to_editProfile)
 
-            val builder = AlertDialog.Builder(context)
+            val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.editTextEt)
@@ -129,20 +124,5 @@ class Profile : Fragment() {
                 show()
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return binding.root
     }
 }
