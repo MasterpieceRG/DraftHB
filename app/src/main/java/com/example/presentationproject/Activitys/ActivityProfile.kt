@@ -1,4 +1,4 @@
-package com.example.presentationproject
+package com.example.presentationproject.Activitys
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
-import androidx.navigation.fragment.findNavController
+import com.example.presentationproject.R
 import com.example.presentationproject.databinding.ActivityProfileBinding
 
 class ActivityProfile : AppCompatActivity() {

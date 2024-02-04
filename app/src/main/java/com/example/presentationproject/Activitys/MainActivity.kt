@@ -1,22 +1,16 @@
-package com.example.presentationproject
+package com.example.presentationproject.Activitys
 
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
-import android.widget.ImageButton
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.presentationproject.R
 import com.example.presentationproject.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var actionBarDrawerTaggle: ActionBarDrawerToggle
@@ -36,7 +30,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
 
-        actionBarDrawerTaggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.nav_open, R.string.nav_close)
+        actionBarDrawerTaggle = ActionBarDrawerToggle(this, binding.drawerLayout,
+            R.string.nav_open,
+            R.string.nav_close
+        )
         actionBarDrawerTaggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

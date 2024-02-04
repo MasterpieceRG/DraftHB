@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFCCBC"
     android:layout_height="match_parent"
-    tools:context=".Wishlist">
+    tools:context=".fragments.Wishlist">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
