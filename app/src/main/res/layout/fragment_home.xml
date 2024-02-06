@@ -49,10 +49,10 @@
                     android:layout_height="65dp"
                     android:layout_marginEnd="20dp"
                     android:backgroundTint="@color/white"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_search"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:importantForAccessibility="no" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -69,11 +69,36 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/myfont"
+                    android:text="Over popular items"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageSlider"
+                    tools:ignore="HardcodedText" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popularRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv2"
+                    app:layout_constraintStart_toStartOf="@+id/tv2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <TextView
                     android:id="@+id/tv1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="72dp"
+                    android:layout_marginTop="87dp"
                     android:fontFamily="@font/myfont"
                     android:text="What would you like to eat"
                     android:textSize="20sp"
@@ -83,92 +108,119 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="HardcodedText" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/randomItem"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_marginStart="30dp"
-                    app:cardBackgroundColor="@color/accent"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="30dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="5dp"
+                <ViewFlipper
+                    android:id="@+id/imageSlider"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:autoStart="true"
+                    android:flipInterval="3000"
+                    android:inAnimation="@android:anim/slide_in_left"
+                    android:outAnimation="@android:anim/slide_out_right"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv1">
 
                     <ImageView
-                        android:id="@+id/randomImage"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:contentDescription="Random Image"
-                        tools:ignore="HardcodedText" />
-                </androidx.cardview.widget.CardView>
+                        android:src="@drawable/slide_image5_appetizer_7_buffalo_wings" />
 
-                <TextView
-                    android:id="@+id/tv2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:fontFamily="@font/myfont"
-                    android:text="Over popular items"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/randomItem"
-                    app:layout_constraintStart_toStartOf="@+id/randomItem"
-                    app:layout_constraintTop_toBottomOf="@+id/randomItem"
-                    tools:ignore="HardcodedText" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_image1_rice_bowl_grilled_chicken_supreme" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/popularRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tv2"
-                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_image3_pizza_5_cyprus" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_image4_sub_10_steak_bomb" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_image2_salad_8_piezonis" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_image6_burger_3_ultimate" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/slide_image7_calzone_2_bbq_chicken" />
+
+                </ViewFlipper>
+
 
                 <TextView
                     android:id="@+id/tv3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginEnd="30dp"
                     android:fontFamily="@font/myfont"
-                    android:text="Categories"
+                    android:text="Upcoming items"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/popularRecyclerView"
-                    app:layout_constraintStart_toStartOf="@+id/popularRecyclerView"
-                    app:layout_constraintTop_toBottomOf="@+id/popularRecyclerView"
-                    tools:ignore="HardcodedText" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/popularRecyclerView" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/categoriesList"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/randomItem"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="30dp"
-                    android:scrollbars="none"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="@color/accent"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/randomImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="Random Image"
+                        android:scaleType="centerCrop"
+                        tools:ignore="HardcodedText" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/randomItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="upcoming item name"
+                    android:fontFamily="@font/myfont"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv3" />
+                    app:layout_constraintTop_toBottomOf="@+id/randomItem" />
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="900dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.946"
-                    tools:ignore="HardcodedText,MissingConstraints"
-                    tools:layout_editor_absoluteX="1dp"
-                    android:contentDescription="TODO" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

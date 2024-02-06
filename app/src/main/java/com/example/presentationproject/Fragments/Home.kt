@@ -2,10 +2,10 @@ package com.example.presentationproject.Fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.presentationproject.Meals.MealList
 import com.example.presentationproject.Retrofit.RetrofitInstance
@@ -13,6 +13,7 @@ import com.example.presentationproject.databinding.FragmentHomeBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class Home : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -41,6 +42,7 @@ class Home : Fragment() {
                     Glide.with(this@Home)
                         .load(randomMeal.strMealThumb)
                         .into(binding.randomImage)
+                    binding.randomItemName.text = randomMeal.strMeal
                 }else {
                     return
                 }
@@ -50,5 +52,7 @@ class Home : Fragment() {
                 Log.d("TEST", t.message.toString())
             }
         })
+
+
     }
 }

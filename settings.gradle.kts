@@ -10,6 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+        //for image slide
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
