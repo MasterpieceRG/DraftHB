@@ -18,4 +18,14 @@
     <string name="bio">A professional bio or biography is a short overview of your experience. Professional bios usually include details about education, employment, achievements, and relevant skills."</string>
     <string name="open_edit_dialog">Open edit dialog</string>
     <string name="go_to_home_page">Go to home page</string>
+
+
+    <string name="BBQ_Chicken_Pizza_ingredients">BBQ chicken <b>pizza</b>\nis a popular pizza variety that usually consists of the following ingredients: Pizza dough or flatbread, BBQ sauce, Cooked chicken, shredded or sliced, Mozzarella cheese, Red onion, sliced, Fresh cilantro, chopped</string>
+    <string name="BBQ_Chicken_Pizza">If you love BBQ chicken and you love pizza, why not put them together? This has long been a cult favorite of sports fans and college kids. The chicken slathered over the top of a pie gives it a tangy, sweet flavor that can’t be beaten.</string>
+
+    <string name="price">
+        <font size="13"><sup>$</sup></font><font size="20">6.47</font>
+    </string>
+
+
 </resources>
