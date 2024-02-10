@@ -1,11 +1,13 @@
 package com.example.presentationproject.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.presentationproject.Activitys.ActivityMenuList
 import com.example.presentationproject.AdapterCategories.CategorieItemAdapter
 import com.example.presentationproject.AdapterCategories.CategorieItems
 import com.example.presentationproject.R
@@ -29,25 +31,22 @@ class Categories : Fragment() {
         var mList = ArrayList<CategorieItems>()
 
 
-        mList.add(CategorieItems(R.drawable.slide_image2_salad_8_piezonis, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(CategorieItems(R.drawable.slide_image1_rice_bowl_grilled_chicken_supreme, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(CategorieItems(R.drawable.slide_image3_pizza_5_cyprus, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(CategorieItems(R.drawable.slide_image4_sub_10_steak_bomb, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(CategorieItems(R.drawable.slide_image5_appetizer_7_buffalo_wings, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(CategorieItems(R.drawable.slide_image6_burger_3_ultimate, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(CategorieItems(R.drawable.slide_image7_calzone_2_bbq_chicken, "Bacon Double Cheeseburger", "$6.47", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(CategorieItems(R.drawable.slide_image2_salad_8_piezonis, "Bacon Double Cheeseburger","Salad: 15"))
+        mList.add(CategorieItems(R.drawable.slide_image1_rice_bowl_grilled_chicken_supreme, "Bacon Double Cheeseburger","Rice bowl: 12"))
+        mList.add(CategorieItems(R.drawable.slide_image3_pizza_5_cyprus, "Bacon Double Cheeseburger","Salad: 75"))
+        mList.add(CategorieItems(R.drawable.slide_image4_sub_10_steak_bomb, "Bacon Double Cheeseburger","Salad: 21"))
+        mList.add(CategorieItems(R.drawable.slide_image5_appetizer_7_buffalo_wings, "Bacon Double Cheeseburger","Salad: 18"))
+        mList.add(CategorieItems(R.drawable.slide_image6_burger_3_ultimate, "Bacon Double Cheeseburger","Salad: 5"))
+        mList.add(CategorieItems(R.drawable.slide_image7_calzone_2_bbq_chicken, "Bacon Double Cheeseburger","Salad: 3"))
 
 
         val categoriesAdapter = CategorieItemAdapter(mList)
         binding.categoriesList.adapter = categoriesAdapter
 
-//        popularAdapter.onItemClick = {
-//            val intent = Intent(this@PizzasMenu, ItemDetails::class.java)
-//            intent.putExtra("itemImage", it.itemImage)
-//            intent.putExtra("itemName", it.itemName)
-//            intent.putExtra("ingredient", it.ingredient)
-//            intent.putExtra("details", it.details)
-//            startActivity(intent)
-//        }
+        categoriesAdapter.onItemClick = {
+            val intent = Intent(context, ActivityMenuList::class.java)
+            intent.putExtra("nameWithCount", it.nameWithCount)
+            startActivity(intent)
+        }
     }
 }

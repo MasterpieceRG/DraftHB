@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1071614321367",
+    "project_id": "hungrybunny-e052a",
+    "storage_bucket": "hungrybunny-e052a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071614321367:android:eb6b88377b0ce2f5098692",
+        "android_client_info": {
+          "package_name": "com.example.presentationproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoRaKLhWMz9jSjAChQJkXz2nwjlHQnMwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 package com.example.presentationproject.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,9 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.presentationproject.Meals.MealList
+import com.example.presentationproject.Activitys.ActivityItemDetails
 import com.example.presentationproject.AdapterPopular.PopularItemAdapter
 import com.example.presentationproject.AdapterPopular.PopularItems
+import com.example.presentationproject.RandomMeals.MealList
 import com.example.presentationproject.R
 import com.example.presentationproject.Retrofit.RetrofitInstance
 import com.example.presentationproject.databinding.FragmentHomeBinding
@@ -58,26 +60,33 @@ class Home : Fragment() {
         var mList = ArrayList<PopularItems>()
 
 
-        mList.add(PopularItems(R.drawable.slide_image2_salad_8_piezonis, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(PopularItems(R.drawable.slide_image1_rice_bowl_grilled_chicken_supreme, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(PopularItems(R.drawable.slide_image3_pizza_5_cyprus, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(PopularItems(R.drawable.slide_image4_sub_10_steak_bomb, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(PopularItems(R.drawable.slide_image5_appetizer_7_buffalo_wings, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(PopularItems(R.drawable.slide_image6_burger_3_ultimate, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
-        mList.add(PopularItems(R.drawable.slide_image7_calzone_2_bbq_chicken, "Bacon Double Cheeseburger", R.string.price, R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular1_sub_3_greek_pocket, "Greek Pocket Sub", "$2.53","Subs","5 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular2_burger_2_double_bacon_cheeseburger, "Double Bacon Cheeseburger", "$5.43","Burger","10 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular3pizza_15_ultimate, "PeZones Ultimate Pizza", "$6.82","Pizza","15 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular4_appetizer_4_fries, "Fries Appetizer", "$0.85","Appetizer","5 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular5_salad_6_grilled_chicken_madeira, "Grilled Chicken Madeira", "$1.50","Salad","5 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular6_sub_1_buffalo_chicken, "Buffalo Chicken Sub", "$3.43","Subs","10 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular7_sub_4_grilled_chicken_caesar_wrap, "Grilled Chicken Caesar Wrap", "$3.95","Subs","10 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular8_penne_meatballs, "Penne Meatballs Pastas", "$2.33","Pastas","10 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular9_calzone_4_cyprus, "Cyprus Calzone", "$3.53","Calzone","10 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular10_appetizer_6_mozzarella_sticks, "Mozzarella Sticks Appetizer", "$2.75","Appetizer","5 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
+        mList.add(PopularItems(R.drawable.popular11_rice_bowl_grilled_chicken_supreme_wraporito, "Grilled Chicken Supreme Wraporito", "$3.20","Rice Bowl","5 min", R.string.BBQ_Chicken_Pizza_ingredients, R.string.BBQ_Chicken_Pizza))
 
 
         val popularAdapter = PopularItemAdapter(mList)
         binding.popularRecyclerView.adapter = popularAdapter
 
-//        popularAdapter.onItemClick = {
-//            val intent = Intent(this@PizzasMenu, ItemDetails::class.java)
-//            intent.putExtra("itemImage", it.itemImage)
-//            intent.putExtra("itemName", it.itemName)
-//            intent.putExtra("ingredient", it.ingredient)
-//            intent.putExtra("details", it.details)
-//            startActivity(intent)
-//        }
+        popularAdapter.onItemClick = {
+            val intent = Intent(context, ActivityItemDetails::class.java)
+            intent.putExtra("image", it.image)
+            intent.putExtra("name", it.name)
+            intent.putExtra("price", it.price)
+            intent.putExtra("category", it.category)
+            intent.putExtra("time", it.time)
+            intent.putExtra("ingredient", it.ingredient)
+            intent.putExtra("details", it.details)
+            startActivity(intent)
+        }
 
 
     }
